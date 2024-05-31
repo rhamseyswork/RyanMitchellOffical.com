@@ -3,12 +3,12 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Navbar, Nav, Container, Badge, NavDropdown } from 'react-bootstrap';
 import "./Nav Bar.css";
 import { FaShoppingCart, FaUser } from 'react-icons/fa';
-import Form from 'react-bootstrap/Form';
 import { useSelector, useDispatch } from 'react-redux';
 import { useLogoutMutation } from '../../slices/usersApiSlice';
 import { logout } from '../../slices/authSlice';
 import SearchBox from '../Search Box/SearchBox';
 import PropTypes from 'prop-types';
+import { resetCart } from '../../slices/cartSlice';
 
 //npm install react-bootstrap-dropdown-menu
 //npm install react-bootstrap-form
@@ -30,6 +30,7 @@ const NavBar = ({ Tabs, children, setTabClassName }) => {
     try{
       await logoutApiCall().unwrap();
       dispatch(logout());
+      dispatch(resetCart());
       navigate('/');
     } catch (err) {
       console.log(err);

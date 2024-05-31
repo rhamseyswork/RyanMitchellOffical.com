@@ -7,6 +7,7 @@ import Loader from '../components/Loader/Loader';
 import { useRegisterMutation } from '../slices/usersApiSlice';
 import { setCredentials } from '../slices/authSlice';
 import { toast, ToastContainer } from 'react-toastify';
+import Modal from '../components/Modal/Modal';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -15,7 +16,7 @@ function Register() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-
+    const [openModal, setOpenModal] = useState(false);
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -38,6 +39,7 @@ function Register() {
         e.preventDefault();
         if (password !== confirmPassword) {
             toast.error('Passwords do not match');
+            handleModal();
             return;
         }
         else {
@@ -50,8 +52,20 @@ function Register() {
             }
         }
     };
+    
+    const handleModal = () => {
+        setOpenModal(!openModal);
+    }
 
     return (
+        <>
+        <Modal 
+        open={openModal} 
+        onClose={handleModal}
+        title="Invalid Username or Password"
+        description="Please valid for correctness"
+        btnPrimary="okay"
+        ></Modal>
         <FormContainer>
             <ToastContainer />
             <h1>Sign Up</h1>
@@ -103,6 +117,7 @@ function Register() {
                 </Col>
             </Row>
         </FormContainer>
+        </>
     )
 }
 

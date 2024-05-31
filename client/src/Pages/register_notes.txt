@@ -1,0 +1,85 @@
+import React, { useState } from 'react';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from '@material-ui/core';
+
+const RegisterForm = () => {
+  const [open, setOpen] = useState(false);
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleConfirmPasswordChange = (e) => {
+    setConfirmPassword(e.target.value);
+  };
+
+  const handlePasswordSubmit = (e) => {
+    e.preventDefault();
+    // Perform password setup logic here
+    // Close modal after password is set
+    handleClose();
+  };
+
+  return (
+    <div>
+      <form onSubmit={handleOpen}>
+        <TextField
+          type="text"
+          label="Enter username"
+          required
+        />
+        <TextField
+          type="email"
+          label="Enter email"
+          required
+        />
+        <Button type="submit" variant="contained" color="primary">
+          Register
+        </Button>
+      </form>
+
+      <Dialog open={open} onClose={handleClose}>
+        <DialogTitle>Set Password</DialogTitle>
+        <DialogContent>
+          <form onSubmit={handlePasswordSubmit}>
+            <TextField
+              type="password"
+              label="Enter password"
+              value={password}
+              onChange={handlePasswordChange}
+              required
+              fullWidth
+            />
+            <TextField
+              type="password"
+              label="Confirm password"
+              value={confirmPassword}
+              onChange={handleConfirmPasswordChange}
+              required
+              fullWidth
+            />
+            <DialogActions>
+              <Button onClick={handleClose} color="primary">
+                Cancel
+              </Button>
+              <Button type="submit" color="primary">
+                Set Password
+              </Button>
+            </DialogActions>
+          </form>
+        </DialogContent>
+      </Dialog>
+    </div>
+  );
+};
+
+export default RegisterForm;

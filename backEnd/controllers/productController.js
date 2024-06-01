@@ -141,7 +141,8 @@ const createProductReview = asyncHandler(async (req, res) => {
 //@route GET /api/products/top
 //@access Public
 const getTopProducts= asyncHandler(async (req, res) => { 
-    const product = await Product.find({}).sort({ rating: -1 }).limit(3);
+    const { productLimit } = req.body ? Number(req.query.limit) : 3;
+    const product = await Product.find({}).sort({ rating: -1 }).limit(productLimit);
 
     res.status(200).json(product);
 });

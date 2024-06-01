@@ -32,6 +32,7 @@ export class Deck extends Component {
       let new_zIndex = 0;
       const scale = 0.90;
       let new_scale = 1;
+      
 
       for (let i = 0; i < total_number_of_cards; i++) {
         if( i < middle_card_by_index){

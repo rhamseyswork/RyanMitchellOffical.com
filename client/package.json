@@ -13,7 +13,8 @@
   "_comment4": "/npm i react-icons",
   "_comment5": "/npm i react-modal-hook",
   "_comment6": "/npm install react-modal",
-  "_comment7": "/npm i react-bootstrap",
+  "_comment7": "/npm install @vis.gl/react-google-maps",
+  
   "_comment8": "/npm i react-bootstrap-form",
   "_comment9": "/npm i react-bootstrap-button",
   "_comment10": "/npm i react-router-bootstrap",
@@ -89,6 +90,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@vis.gl/react-google-maps": "^1.0.2",
     "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
     "dotenv": "^16.4.4",

@@ -9,6 +9,7 @@ import { logout } from '../../slices/authSlice';
 import SearchBox from '../Search Box/SearchBox';
 import PropTypes from 'prop-types';
 import { resetCart } from '../../slices/cartSlice';
+import Links from '../Links/Links';
 
 //npm install react-bootstrap-dropdown-menu
 //npm install react-bootstrap-form
@@ -79,7 +80,7 @@ const NavBar = ({ Tabs, children, setTabClassName }) => {
   
 
   return (
-    <header>
+    <header className='navBarSudo'>
       <Navbar className='navBar' bg="dark" variant="dark" expand="lg" collapseOnSelect>
         <Container className="navBar-1">
           <Navbar.Brand to="/">
@@ -128,6 +129,9 @@ const NavBar = ({ Tabs, children, setTabClassName }) => {
           {userInfo ? <Navbar.Text>Signed in as: <span style={{ color: 'orange' }}>{userInfo.name}</span></Navbar.Text> : <Navbar.Text><Link to="/login">Login</Link></Navbar.Text>}{/* Dev: add toggle login mutator */}
           </Navbar.Collapse>
         </Container>
+        <Navbar.Collapse className='links-container'>
+          <Links />
+        </Navbar.Collapse>
       </Navbar>
     </header>
   );

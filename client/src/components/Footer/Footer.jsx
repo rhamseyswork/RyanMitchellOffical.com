@@ -1,6 +1,15 @@
 import { Link } from 'react-router-dom';
 import FooterBox from './Footer_Box';
 import { Container, Row, Col } from 'react-bootstrap';
+import process from 'process';
+import { 
+  APIProvider, 
+  Map,
+  AdvancedMarker,
+  Pin,
+  InfoWindow,
+} from '@vis.gl/react-google-maps';
+import './Footer.module.css'
 
 function Footer() {
   return (
@@ -12,14 +21,18 @@ function Footer() {
       <Container>
         <Row style={{gap:"20px",}}>
           <Col>
-            <FooterBox title='Ryan&nbsp;Michell'><hr style={{border:"solid 3px black"}}/><span>Hello World</span></FooterBox>
+            <FooterBox title='Ryan&nbsp;Michell'><hr style={{border:"solid 3px black"}}/>
+              <span>
+                Rayan Mitchell is a Los Angels based music singer and song. He has been in the music industry for over 10 years. He has released 10 albums and 20 singles. He has won 3 Grammy Awards and 5 MTV Music Awards. He has performed in over 100 concerts worldwide.
+              </span>
+            </FooterBox>
           </Col>
           <div className="vr p-0" />
           <Col>
           <FooterBox title="Contact">
-            <span>Email:<Link href="mailto:example@example.com" className="ml-1">&nbsp;example@example.com</Link></span>
+            <span>Email:<Link href="mailto:admin@ryanmitchellofficiall.com" className="ml-1">&nbsp;admin@ryanmitchellofficiall.com</Link></span>
             <br />
-            <span className="mt-2">Phone: <a href="tel:+1234567890">+1234567890</a></span>
+            <span className="mt-2">Phone: <a href="tel:+19493852092">+1(949)385-2092</a></span>
           </FooterBox>
           </Col>
           <div className="vr p-0" />
@@ -36,8 +49,11 @@ function Footer() {
               </span></FooterBox>
           </Col>
           <div className="vr p-0" />
+
           <Col>
-            <FooterBox title="Example"><hr style={{border:"solid 3px black"}}/>import map</FooterBox>
+            <FooterBox title="Example"><hr style={{border:"solid 3px black"}}/>
+              import map
+            </FooterBox>
           </Col>
         </Row>
       </Container>
@@ -45,7 +61,7 @@ function Footer() {
       <br />
       <br />
       <hr />
-      <p style={{textAlign:"center"}}>All Right Reserved ©<Link to="OCPaceSetters.com" style={{color:"orange"}}>OC Pace Setters</Link> <span className="d-block"><Link to="/terms">Terms </Link>|<Link to="/privacy"> Privacy</Link></span></p>
+      <p className="OC-Pace-Setters" style={{textAlign:"center"}}>All Right Reserved ©<Link to="https://www.OCPaceSetters.com" style={{color:"orange"}}> OC Pace Setters</Link> <span className="d-block"><Link to="/terms">Terms </Link>|<Link to="/privacy"> Privacy</Link></span></p>
     </div>
   )
 }

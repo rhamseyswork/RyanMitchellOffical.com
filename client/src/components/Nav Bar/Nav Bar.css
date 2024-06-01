@@ -1,6 +1,5 @@
-header {
+.navBarSudo{
     width: 100vw;
-}
 
 .navBar:last-child {
     display: grid;
@@ -35,4 +34,40 @@ header {
 
 .navBar-3 > *{
     text-align: center;
+}
+
+.links-container{
+    grid-column: span 3;
+    justify-content: center;
+    gap: 20px;
+}
+.links-container > * {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 14px 16px;
+    text-align: center;
+    color:white;
+}
+
+.links-container > *:hover {
+    color: black;
+}
+
+@media only screen and (max-width: 480px) {
+    .navBar:last-child {
+      grid-template-columns: auto; /* One column */
+    }
+  
+    .navBar-1,
+    .navBar-2,
+    .navBar-3 {
+      grid-column: span 1; /* Span one column */
+    }
+  
+    .links-container > * {
+      font-size: 16px; /* Reduce font size */
+      padding: 8px 12px; /* Reduce padding */
+    }
+
 }

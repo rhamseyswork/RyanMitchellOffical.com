@@ -6,6 +6,7 @@ const title = "Ryan Mitchell";
 const tabs = [
     "News",
     ["Media", "Music", "Video", "Gallery"],
+    "Tour Dates",
     "Merch",
     "Biography",
 ];

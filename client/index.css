@@ -23,9 +23,3 @@ body{
 h1{
   padding: 20px 0px !important;
 }
-
-@media only screen and (max-width: 250px) {
-    html {
-      min-width: 250px;
-    }
-  }

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import slides from './SlideShowIndex';
 import { FaArrowRight, FaArrowLeft, FaCircle, FaRegCircle } from "react-icons/fa";
-import './module.slideshow.css'
+import './slideshow.module.css'
 
 
 const SlideShow = () => {

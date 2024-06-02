@@ -10,6 +10,7 @@ import SearchBox from '../Search Box/SearchBox';
 import PropTypes from 'prop-types';
 import { resetCart } from '../../slices/cartSlice';
 import Links from '../Links/Links';
+import DealBanner from '../Deal Banner/DealBanner';
 
 //npm install react-bootstrap-dropdown-menu
 //npm install react-bootstrap-form
@@ -81,6 +82,7 @@ const NavBar = ({ Tabs, children, setTabClassName }) => {
 
   return (
     <header className='navBarSudo'>
+      <DealBanner />
       <Navbar className='navBar' bg="dark" variant="dark" expand="lg" collapseOnSelect>
         <Container className="navBar-1">
           <Navbar.Brand to="/">

@@ -1,6 +1,7 @@
 import  { Component } from 'react'
 import Card from './Card'
 import { FaAngleRight, FaAngleLeft, FaCircle, FaRegCircle } from 'react-icons/fa';
+import Images from './Images.js'
 
 
 export class Deck extends Component {
@@ -64,7 +65,7 @@ export class Deck extends Component {
             y={new_y}
             z_index={i===middle_card_by_index ? 100 : new_zIndex}
             scale={new_scale}
-            picsum_image={`https://picsum.photos/${300+(2*i)}/200`}
+            picsum_image={Images[i]}
           />
         );
       }

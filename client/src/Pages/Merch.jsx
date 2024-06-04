@@ -21,7 +21,7 @@ function Merch() {
     <>
         <Meta title="Shop Ryan Mitch MP3"/>
         <h1>Latest Products</h1>
-        {!keyword ? <ProductCarousel/> : <Button as={Link} to="/merch" className='btn btn-dark mb-4'>Go Back</Button> }
+        {!keyword ? <ProductCarousel /> : <Button as={Link} to="/merch" className='btn btn-dark mb-4'>Go Back</Button> }
         <Row style={{justifyContent: 'center', width: 'inherit'}}>
           {data.products.map(product => (
             <Col key={product._id} sm={12} md={6} lg={4} xl={3}>

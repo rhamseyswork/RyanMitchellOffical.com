@@ -14,7 +14,6 @@
   "_comment5": "/npm i react-modal-hook",
   "_comment6": "/npm install react-modal",
   "_comment7": "/npm install @vis.gl/react-google-maps",
-  
   "_comment8": "/npm i react-bootstrap-form",
   "_comment9": "/npm i react-bootstrap-button",
   "_comment10": "/npm i react-router-bootstrap",
@@ -95,6 +94,7 @@
     "bootstrap": "^5.3.3",
     "dotenv": "^16.4.4",
     "gh-pages": "^3.2.3",
+    "keyframes": "^2.3.0",
     "npm": "^10.5.2",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.2",

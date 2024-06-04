@@ -3,9 +3,10 @@
   background-color: navajowhite;
   color: brown;
   text-align: center;
-  padding: 10px;
+  padding-top: 10px;
   width: 100vw;
   overflow: hidden;
+  padding-bottom: 0;
 }
 
 .Slide {

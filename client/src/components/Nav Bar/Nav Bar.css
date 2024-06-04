@@ -59,15 +59,10 @@
       grid-template-columns: auto; /* One column */
     }
   
-    .navBar-1,
-    .navBar-2,
-    .navBar-3 {
-      grid-column: span 1; /* Span one column */
-    }
-  
     .links-container > * {
       font-size: 16px; /* Reduce font size */
       padding: 8px 12px; /* Reduce padding */
     }
 
+}
 }

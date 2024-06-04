@@ -1,45 +1,30 @@
-import {FaFacebookSquare,FaInstagramSquare, FaYoutubeSquare, FaSpotify} from 'react-icons/fa'
+import { FaFacebookSquare, FaInstagramSquare, FaYoutubeSquare, FaSpotify } from 'react-icons/fa'
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { SiApplemusic } from 'react-icons/si';
 import { Link } from 'react-router-dom';
-
-const styles = {
-  links: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    gap: '50px'
-  },
-  link: {
-    textDecoration: 'none',
-    color: 'inherit'
-  },
-  icon: {
-    fontSize: '34px'
-  }
-};
+import './Links.css'
 
 const Links = () => {
-
   return (
     <>
-      <span style={styles.links}>
-        <Link to='/' style={styles.link}>
-          <FaFacebookSquare style={styles.icon} />
+      <span className='links-container'>
+        <Link to='/' className='link'>
+          <FaFacebookSquare className='icon' />
         </Link>
-        <Link to='/' style={styles.link}>
-          <FaSquareXTwitter style={styles.icon} />
+        <Link to='/' className='link'>
+          <FaSquareXTwitter className='icon' />
         </Link>
-        <Link to='/' style={styles.link}>
-          <FaInstagramSquare style={styles.icon} />
+        <Link to='/' className='link'>
+          <FaInstagramSquare className='icon' />
         </Link>
-        <Link to='/' style={styles.link}>
-          <FaYoutubeSquare style={styles.icon} />
+        <Link to='/' className='link'>
+          <FaYoutubeSquare className='icon' />
         </Link>
-        <Link to='/' style={styles.link}>
-          <SiApplemusic style={styles.icon} />
+        <Link to='/' className='link'>
+          <SiApplemusic className='icon' />
         </Link>
-        <Link to='/' style={styles.link}>
-          <FaSpotify style={styles.icon} />
+        <Link to='/' className='link'>
+          <FaSpotify className='icon' />
         </Link>
       </span>
     </>

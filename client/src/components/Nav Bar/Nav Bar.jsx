@@ -82,7 +82,7 @@ const NavBar = ({ Tabs, children, setTabClassName }) => {
 
   return (
     <header className='navBarSudo'>
-      <DealBanner />
+      {(location.pathname == "/" || location.pathname == "/Merch") && <DealBanner />}
       <Navbar className='navBar' bg="dark" variant="dark" expand="lg" collapseOnSelect>
         <Container className="navBar-1">
           <Navbar.Brand to="/">

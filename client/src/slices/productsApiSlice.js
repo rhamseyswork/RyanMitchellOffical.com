@@ -1,4 +1,3 @@
-import { getTopProducts } from "../../../backEnd/controllers/productController.js";
 import { PRODUCTS_URL, UPLOADS_URL } from "../constants";
 import { apiSlice } from "./apiSlice.js";
 
@@ -61,6 +60,13 @@ export const productsApiSlice = apiSlice.injectEndpoints({
             }),
             keepUnusedDataFor: 5,
         }),
+        getLatestProducts: builder.query({
+            query: (data) => ({
+                url: `${PRODUCTS_URL}/top`,
+                body: data,
+            }),
+            keepUnusedDataFor: 5,
+        }),
     }),
 });
 
@@ -72,5 +78,6 @@ export const {
     useUpdateProductImageMutation,
     useDeleteProductMutation,
     useCreateReviewMutation,
-    useGetTopProductsQuery
+    useGetTopProductsQuery,
+    useGetLatestProductsQuery
 } = productsApiSlice;

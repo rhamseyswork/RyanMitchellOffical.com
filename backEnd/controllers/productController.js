@@ -142,7 +142,19 @@ const createProductReview = asyncHandler(async (req, res) => {
 //@access Public
 const getTopProducts= asyncHandler(async (req, res) => { 
     const { productLimit } = req.body ? Number(req.query.limit) : 3;
-    const product = await Product.find({}).sort({ rating: -1 }).limit(productLimit);
+    const product = await Product.find({ rating: { $gt: 3 }}).sort({ rating: -1 }).limit(productLimit);
+
+    res.status(200).json(product);
+});
+
+//@desc Get Latest products
+//@route GET /api/products/Latest
+//@access Public
+const getLatestProducts= asyncHandler(async (req, res) => { 
+    const { productLimit } = req.body ? Number(req.query.limit) : 3;
+    const oneMonthAgo = new Date();
+    oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1); // Set date to one month ago
+    const products = await Product.find({ createdAt: { $gte: oneMonthAgo } }).sort({ createdAt: -1 }).limit(productLimit); // Filter products created within the last month
 
     res.status(200).json(product);
 });
@@ -154,5 +166,6 @@ export {
     updateProduct,
     deleteProduct,
     createProductReview,
-    getTopProducts
+    getTopProducts,
+    getLatestProducts
 };

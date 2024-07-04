@@ -10,31 +10,46 @@
   "_comment2": "/npm i cookie-parser",
   "-comment3": "/npm install jsonwebtoken",
   "_comment4": "https://github.com/bradtraversy/proshop-v2/blob/main/frontend/src/slices/productsApiSlice.js",
+  "_comment5:": "sudo npm install -g react-native-cli",
+  "_comment6:": "sudo chown -R $USER /usr/local/lib/node_modules/",
+  "_comment7:": "npx react-native@latest init MobileApp",
   "scripts": {
-    "deploy": "npm run build && mv dist ./dist_version_control/dist_$(date +%Y%m%d%H%M%S)",
-    "start": "node backEnd/server.js",
-    "server": "nodemon backend/server.js",
-    "client": "npm start --prefix client",
+    "start-test": "echo 'Running tests...' && chmod +x test.sh && ./test.sh",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "node backEnd/server.js",
+    "server": "nodemon backEnd/server.js",
+    "client": "npm start --prefix client",
+    "prod": "npm run lint && npm run build && npm run server:prod",
+    "server:prod": "cross-env NODE_ENV=production node backEnd/server.js",
+    "build": "npm install && npm install --prefix client --legacy-peer-deps && npm run build --prefix client && mkdir -p dist_version_control && cp -r client/build dist_version_control/dist_$(date +%Y%m%d_%H%M%S)",
+    "deploy": "git add . && git status --porcelain | grep . && read -p 'Enter commit message: ' commit_message && git commit -u -m \"$commit_message\" && git push origin main --force || echo 'Nothing to commit. Aborting deploy.'",
     "data:import": "node backend/seeder.js",
     "data:destroy": "node backend/seeder.js -d",
-    "build": "npm install && npm install --prefix client && npm run build --prefix client"
+    "lint-old": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint . --max-warnings 0",
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rhamseyswork/[URL]"
+    "url": "git+https://github.com/rhamseyswork/https://github.com/rhamseyswork/RyanMitchellOffical.com"
   },
   "keywords": [
+    "Ryan Micthell MP3",
     "Ryan Mitchell",
     "Ryan",
-    "Mitchell"
+    "Mitchell",
+    "MP3",
+    "Music"
   ],
   "author": "OC Pace Setters",
-  "license": "MIT",
+  "license": "[MIT, GNU]",
   "bugs": {
-    "url": "https://github.com/rhamseyswork/[URL]/issues"
+    "url": "https://github.com/rhamseyswork/RyanMitchellOffical.com/issues"
   },
   "dependencies": {
+    "@paypal/react-paypal-js": "^8.5.0",
+    "@react-native-community/cli": "^13.6.9",
+    "@vis.gl/react-google-maps": "^1.1.0",
     "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
     "cookie-parser": "^1.4.6",
@@ -43,9 +58,12 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.3.5",
     "multer": "^1.4.5-lts.1",
-    "react-icons": "^5.2.1"
+    "react-router-bootstrap": "^0.26.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.24.7",
+    "@babel/node": "^7.24.7",
+    "@babel/preset-react": "^7.24.7",
     "concurrently": "^8.2.2",
     "nodemon": "^3.1.0"
   }

@@ -18,6 +18,7 @@ const authUser = asyncHandler(async (req, res) => {
             name: user.name,
             email: user.email,
             isAdmin: user.isAdmin,
+            isSuperAdmin: user.isSuperAdmin,
         });
     } else {
         res.status(401);

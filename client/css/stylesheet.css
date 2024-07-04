@@ -1,0 +1,57 @@
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background-image: url('/Hero.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  z-index: -10;
+
+  /* Apply the blur effect */
+  filter: blur(20px);
+  -webkit-filter: blur(20px); /* For Safari */
+}
+  
+  .background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* grey overlay with 70% opacity */
+  }
+  
+body{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    text-align: center !important;
+    height: 100vh;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    min-width: 225px;
+    min-height: 100vh;
+}
+
+#root{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+    align-self: center;
+    text-align: center;
+    margin: 0px 20px 0px 20px!important;
+}
+
+
+#root > *:not(.Footer-container){
+    margin: auto;
+}

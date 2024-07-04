@@ -1,12 +1,13 @@
 #!/bin/bash
 #chmod +x update_client_branch.sh
 #./update_client_branch.sh
+#rename to update.sh
 
 # Ensure we're on the server branch
-git checkout main
+git checkout ryanmitchell.mp3
 
 # Pull the latest changes from the server branch (optional but recommended)
-git pull origin main --rebase
+git pull origin ryanmitchell.mp3 --rebase
 
 # Add all changes to staging
 git add -A
@@ -15,4 +16,4 @@ git add -A
 git commit -m "Update server branch with latest changes"
 
 # Force push the changes to GitHub
-git push origin main --force
+git push origin ryanmitchell.mp3 --force

@@ -222,7 +222,6 @@ const slides = [
 const styles = {
   container: {
       position: 'relative',
-      overflow: 'hidden',
   },
   deck: {
       position: 'absolute',

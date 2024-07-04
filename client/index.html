@@ -1,59 +1,105 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-   <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/logo.svg"
-    />
+    <link async rel="icon" type="image/svg+xml" href="/Hero.webp" />
     <!--About The HTML Document-->
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <meta
-      name="description"
-      content="Basic-Frontend-Template"
-    />
-    <meta
-      name="keywords"
-      content="Basic, Frontend Template"
-    />
-    <meta
-      name="author"
-      content="Rhamseys Garcia"
-    />
-    <meta
-      name="robots"
-      content="index, follow"
-    />
-    <meta
-      http-equiv="refresh"
-      content="none"
-    /> <!--Only in dev set to content="30"-->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Discover and listen to music by artist Ryan Mitchell." />
+    <meta name="keywords" content="Ryan Mitchell, Ryan, Mitchell, MP3, music, artist, songs, listen, streaming" />
+    <meta name="author" content="OC Pace Setters" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#000000" />
+    <meta http-equiv="refresh" content="none" />
+    <!--Only in dev set to content="30"-->
     <!--Meta Tag Dev Only-->
-    <meta
-      http-equiv="X-UA-Compatible"
-      content="IE=edge"
-    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <!-- Open Graph Meta Tags (for Facebook, LinkedIn, etc.) -->
+    <meta property="og:title" content="Ryan Mitchell's Music">
+    <meta property="og:description" content="Discover and listen to music by artist Ryan Mitchell.">
+    <meta property="og:type" content="music.song">
+    <meta property="og:audio" content="/jiglr-hello-world.mp3"> <!-- URL to your audio file -->
+    <meta property="og:audio:type" content="/jiglr-hello-world.mp3"> <!-- MIME type of your audio file -->
+    <meta property="og:url" content="https://ryanmitchell-mp3.onrender.com/">
+    <meta property="og:image" content="/Hero.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/webp">
+    <meta property="og:image:alt" content="Ryan Mitchell's Music Cover">
+
+    <!-- Meta tags for iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Ryan Mitchell MP3">
+    <meta name="apple-mobile-web-app-audio" content="yes"> <!-- Required for audio playback on iOS -->
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@yourtwitterhandle">
+    <meta name="twitter:title" content="Ryan Mitchell's Music">
+    <meta name="twitter:description" content="Discover and listen to music by artist Ryan Mitchell.">
+    <meta name="twitter:image" content="/Hero.webp">
+
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "MusicGroup",
+        "name": "Ryan Mitchell",
+        "url": "https://ryanmitchell-mp3.onrender.com/",
+        "description": "Discover and listen to music by artist Ryan Mitchell.",
+        "sameAs": [
+          "https://twitter.com/yourtwitterhandle",
+          "https://www.facebook.com/yourfacebookpage"
+        ]
+      }
+    </script>
+
     <!--Viewport for IE-->
     <!--Open Graph Tags (e.g., <meta property="og:title" content="title-here">-->
     <!--Twitter Card Tags (e.g., <meta name="twitter:card" content="summary-large-image">)-->
-    <link rel="stylesheet" href="./index.css" />
-    <title>Ryan Mitchell MP3 Offical</title>
+
+    <title>Ryan Mitchell Site</title>
+    
+    <!--Stylesheet ©-->
+    <link rel="stylesheet" href="./css/stylesheet.css">
+    <link rel="manifest" type="XML" href="/manifest.json"/>
+
+    <!-- <link rel="preload" href="fonts/cicle_fina-webfont.woff2" as="font" type="font/woff2" crossorigin="anonymous" /> -->
+    <script async type="module" src="./src/main.jsx" crossorigin="" language="JavaScript" integrity="" charset="UTF-8" onload="handleLoad('primary', 'app')" onerror="handleError('primary', 'app')"></script>
+    <script defer async type="module" src="./js/index-fallback.js" crossorigin="anonymous" integrity="" language="JavaScript" charset="UTF-8" onload="handleLoad('secondary', 'app')" onerror="handleError('secondary', 'app')"></script>
+    <script defer async type="module" src="./js/index-anon.js" crossorigin="anonymous" language="JavaScript" integrity="" charset="UTF-8" onload="handleLoad('primary', '_')" onerror="handleError('primary', '')"></script>
+    <script defer type="module" src="./js/index-main.js" crossorigin="use-credentials" integrity="" language="JavaScript" charset="UTF-8" onload="handleLoad('primary', 'fallback')" onerror="handleError('primary', 'fallback')"></script>
+
   </head>
-  <body>
-    <div id="root"></div>
+
+  <body style="display: flex; position: relative; flex-direction: row; background: hsl(0, 0%, 7%); font-family: Poppins, sans-serif; color: white; scroll-behavior: smooth; margin: 0; padding: 0;">
+    <div class="background">
+      <div class="background-overlay"></div>
+    </div>
+    <noscript>You need to enable JavaScript to run my APPLICATION.</noscript>
+    <main class="layout">
+      <div id="root"></div>
+    </main>
+
+    <!--CONSOLE SCRIPT FUNCTION-->
+    <script>
+      function handleLoad(txt=NaN, func=NaN) {
+        isNaN(txt) || isNaN(func) ? console.log(`${txt} ${func} loaded successfully.`) : NaN;
+      }
+      function handleError(txt=NaN, func=NaN) {
+          console.log('Error loading ${txt} ${func}.');
+      }
+    </script>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-352Q5TZ7SD"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-352Q5TZ7SD');
     </script>
-    <script type="module" src="./src/main.jsx"></script>
   </body>
 </html>
